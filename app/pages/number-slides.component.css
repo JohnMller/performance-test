@@ -1,0 +1,35 @@
+.pagination {
+    horizontal-align: center;
+}
+
+.pagination Label {
+    padding: 0 10;
+    color: #000;
+}
+
+.pagination Label.active {
+    color: #f4cf47;
+}
+
+.content {
+    background-color: #dbeaf4;
+    margin: 0 5;
+    padding: 5;
+}
+
+.number-container StackLayout {
+    color: #1f85c9;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: center;
+    height: 100%;
+    border-color: #dbeaf4;
+    border-top-width: 4%;
+    border-left-width: 2%;
+    border-right-width: 2%;
+}
+
+.number-container StackLayout.selected {
+    color: #000;
+    background-color: #f4cf47;
+}

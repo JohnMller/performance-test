@@ -1,0 +1,236 @@
+<DockLayout>
+    <Button dock="bottom" text="Next" [nsRouterLink]="['/dummy']"></Button>
+
+    <StackLayout dock="top" orientation="horizontal" class="pagination">
+        <Label *ngFor="let slideIndicator of slideIndicators; let i = index" text="o" [class.active]="i == currentSlide"></Label>
+    </StackLayout>
+
+    <RadListView #listView dock="top" [items]="slideIndicators" (itemLoading)="onItemLoading($event)" (scrollEnded)="onScrollEnded($event)">
+        <ListViewLinearlayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearlayout>
+        <ng-template tkListItemTemplate let-slide="item">
+            <StackLayout>
+                <DockLayout class="content">
+                    <GridLayout dock="bottom" rows="auto" , columns="*,*">
+                        <Button col="0" text="Clear Numbers" (tap)="onClear(slide)"></Button>
+                        <Button col="1" text="Fill Numbers" (tap)="onFill(slide)"></Button>
+                    </GridLayout>
+
+                    <DockLayout dock="top">
+                        <GridLayout rows="*,*,*,*,*,*,*,*,*,*", columns="*,*,*,*,*,*,*" class="number-container">
+                            <StackLayout row="0" col="0" (tap)="onNumber(1, slide)" [class.selected]="isNumberSelected(1, slide)">
+                                <Label text="1"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="1" (tap)="onNumber(2, slide)" [class.selected]="isNumberSelected(2, slide)">
+                                <Label text="2"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="2" (tap)="onNumber(3, slide)" [class.selected]="isNumberSelected(3, slide)">
+                                <Label text="3"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="3" (tap)="onNumber(4, slide)" [class.selected]="isNumberSelected(4, slide)">
+                                <Label text="4"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="4" (tap)="onNumber(5, slide)" [class.selected]="isNumberSelected(5, slide)">
+                                <Label text="5"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="5" (tap)="onNumber(6, slide)" [class.selected]="isNumberSelected(6, slide)">
+                                <Label text="6"></Label>
+                            </StackLayout>
+                            <StackLayout row="0" col="6" (tap)="onNumber(7, slide)" [class.selected]="isNumberSelected(7, slide)">
+                                <Label text="7"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="0" (tap)="onNumber(8, slide)" [class.selected]="isNumberSelected(8, slide)">
+                                <Label text="8"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="1" (tap)="onNumber(9, slide)" [class.selected]="isNumberSelected(9, slide)">
+                                <Label text="9"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="2" (tap)="onNumber(10, slide)" [class.selected]="isNumberSelected(10, slide)">
+                                <Label text="10"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="3" (tap)="onNumber(11, slide)" [class.selected]="isNumberSelected(11, slide)">
+                                <Label text="11"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="4" (tap)="onNumber(12, slide)" [class.selected]="isNumberSelected(12, slide)">
+                                <Label text="12"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="5" (tap)="onNumber(13, slide)" [class.selected]="isNumberSelected(13, slide)">
+                                <Label text="13"></Label>
+                            </StackLayout>
+                            <StackLayout row="1" col="6" (tap)="onNumber(14, slide)" [class.selected]="isNumberSelected(14, slide)">
+                                <Label text="14"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="0" (tap)="onNumber(15, slide)" [class.selected]="isNumberSelected(15, slide)">
+                                <Label text="15"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="1" (tap)="onNumber(16, slide)" [class.selected]="isNumberSelected(16, slide)">
+                                <Label text="16"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="2" (tap)="onNumber(17, slide)" [class.selected]="isNumberSelected(17, slide)">
+                                <Label text="17"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="3" (tap)="onNumber(18, slide)" [class.selected]="isNumberSelected(18, slide)">
+                                <Label text="18"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="4" (tap)="onNumber(19, slide)" [class.selected]="isNumberSelected(19, slide)">
+                                <Label text="19"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="5" (tap)="onNumber(20, slide)" [class.selected]="isNumberSelected(20, slide)">
+                                <Label text="20"></Label>
+                            </StackLayout>
+                            <StackLayout row="2" col="6" (tap)="onNumber(21, slide)" [class.selected]="isNumberSelected(21, slide)">
+                                <Label text="21"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="0" (tap)="onNumber(22, slide)" [class.selected]="isNumberSelected(22, slide)">
+                                <Label text="22"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="1" (tap)="onNumber(23, slide)" [class.selected]="isNumberSelected(23, slide)">
+                                <Label text="23"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="2" (tap)="onNumber(24, slide)" [class.selected]="isNumberSelected(24, slide)">
+                                <Label text="24"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="3" (tap)="onNumber(25, slide)" [class.selected]="isNumberSelected(25, slide)">
+                                <Label text="25"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="4" (tap)="onNumber(26, slide)" [class.selected]="isNumberSelected(26, slide)">
+                                <Label text="26"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="5" (tap)="onNumber(27, slide)" [class.selected]="isNumberSelected(27, slide)">
+                                <Label text="27"></Label>
+                            </StackLayout>
+                            <StackLayout row="3" col="6" (tap)="onNumber(28, slide)" [class.selected]="isNumberSelected(28, slide)">
+                                <Label text="28"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="0" (tap)="onNumber(29, slide)" [class.selected]="isNumberSelected(29, slide)">
+                                <Label text="29"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="1" (tap)="onNumber(30, slide)" [class.selected]="isNumberSelected(30, slide)">
+                                <Label text="30"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="2" (tap)="onNumber(31, slide)" [class.selected]="isNumberSelected(31, slide)">
+                                <Label text="31"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="3" (tap)="onNumber(32, slide)" [class.selected]="isNumberSelected(32, slide)">
+                                <Label text="32"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="4" (tap)="onNumber(33, slide)" [class.selected]="isNumberSelected(33, slide)">
+                                <Label text="33"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="5" (tap)="onNumber(34, slide)" [class.selected]="isNumberSelected(34, slide)">
+                                <Label text="34"></Label>
+                            </StackLayout>
+                            <StackLayout row="4" col="6" (tap)="onNumber(35, slide)" [class.selected]="isNumberSelected(35, slide)">
+                                <Label text="35"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="0" (tap)="onNumber(36, slide)" [class.selected]="isNumberSelected(36, slide)">
+                                <Label text="36"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="1" (tap)="onNumber(37, slide)" [class.selected]="isNumberSelected(37, slide)">
+                                <Label text="37"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="2" (tap)="onNumber(38, slide)" [class.selected]="isNumberSelected(38, slide)">
+                                <Label text="38"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="3" (tap)="onNumber(39, slide)" [class.selected]="isNumberSelected(39, slide)">
+                                <Label text="39"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="4" (tap)="onNumber(40, slide)" [class.selected]="isNumberSelected(40, slide)">
+                                <Label text="40"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="5" (tap)="onNumber(41, slide)" [class.selected]="isNumberSelected(41, slide)">
+                                <Label text="41"></Label>
+                            </StackLayout>
+                            <StackLayout row="5" col="6" (tap)="onNumber(42, slide)" [class.selected]="isNumberSelected(42, slide)">
+                                <Label text="42"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="0" (tap)="onNumber(43, slide)" [class.selected]="isNumberSelected(43, slide)">
+                                <Label text="43"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="1" (tap)="onNumber(44, slide)" [class.selected]="isNumberSelected(44, slide)">
+                                <Label text="44"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="2" (tap)="onNumber(45, slide)" [class.selected]="isNumberSelected(45, slide)">
+                                <Label text="45"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="3" (tap)="onNumber(46, slide)" [class.selected]="isNumberSelected(46, slide)">
+                                <Label text="46"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="4" (tap)="onNumber(47, slide)" [class.selected]="isNumberSelected(47, slide)">
+                                <Label text="47"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="5" (tap)="onNumber(48, slide)" [class.selected]="isNumberSelected(48, slide)">
+                                <Label text="48"></Label>
+                            </StackLayout>
+                            <StackLayout row="6" col="6" (tap)="onNumber(49, slide)" [class.selected]="isNumberSelected(49, slide)">
+                                <Label text="49"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="0" (tap)="onNumber(50, slide)" [class.selected]="isNumberSelected(50, slide)">
+                                <Label text="50"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="1" (tap)="onNumber(51, slide)" [class.selected]="isNumberSelected(51, slide)">
+                                <Label text="51"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="2" (tap)="onNumber(52, slide)" [class.selected]="isNumberSelected(52, slide)">
+                                <Label text="52"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="3" (tap)="onNumber(53, slide)" [class.selected]="isNumberSelected(53, slide)">
+                                <Label text="53"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="4" (tap)="onNumber(54, slide)" [class.selected]="isNumberSelected(54, slide)">
+                                <Label text="54"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="5" (tap)="onNumber(55, slide)" [class.selected]="isNumberSelected(55, slide)">
+                                <Label text="55"></Label>
+                            </StackLayout>
+                            <StackLayout row="7" col="6" (tap)="onNumber(56, slide)" [class.selected]="isNumberSelected(56, slide)">
+                                <Label text="56"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="0" (tap)="onNumber(57, slide)" [class.selected]="isNumberSelected(57, slide)">
+                                <Label text="57"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="1" (tap)="onNumber(58, slide)" [class.selected]="isNumberSelected(58, slide)">
+                                <Label text="58"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="2" (tap)="onNumber(59, slide)" [class.selected]="isNumberSelected(59, slide)">
+                                <Label text="59"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="3" (tap)="onNumber(60, slide)" [class.selected]="isNumberSelected(60, slide)">
+                                <Label text="60"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="4" (tap)="onNumber(61, slide)" [class.selected]="isNumberSelected(61, slide)">
+                                <Label text="61"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="5" (tap)="onNumber(62, slide)" [class.selected]="isNumberSelected(62, slide)">
+                                <Label text="62"></Label>
+                            </StackLayout>
+                            <StackLayout row="8" col="6" (tap)="onNumber(63, slide)" [class.selected]="isNumberSelected(63, slide)">
+                                <Label text="63"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="0" (tap)="onNumber(64, slide)" [class.selected]="isNumberSelected(64, slide)">
+                                <Label text="64"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="1" (tap)="onNumber(65, slide)" [class.selected]="isNumberSelected(65, slide)">
+                                <Label text="65"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="2" (tap)="onNumber(66, slide)" [class.selected]="isNumberSelected(66, slide)">
+                                <Label text="66"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="3" (tap)="onNumber(67, slide)" [class.selected]="isNumberSelected(67, slide)">
+                                <Label text="67"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="4" (tap)="onNumber(68, slide)" [class.selected]="isNumberSelected(68, slide)">
+                                <Label text="68"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="5" (tap)="onNumber(69, slide)" [class.selected]="isNumberSelected(69, slide)">
+                                <Label text="69"></Label>
+                            </StackLayout>
+                            <StackLayout row="9" col="6" (tap)="onNumber(70, slide)" [class.selected]="isNumberSelected(70, slide)">
+                                <Label text="70"></Label>
+                            </StackLayout>
+                        </GridLayout>
+                    </DockLayout>
+                </DockLayout>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</DockLayout>
